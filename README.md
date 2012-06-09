@@ -106,25 +106,61 @@ or
 
 List all app config vars:
 
-    app.config_vars
+    config_vars = app.config_vars
+
+Add or delete a config var:
+
+    config_vars.add 'KEY' => 'value'
+    config_vars.delete 'KEY'
+
+or:
+
+    config_var.delete!
+
+They can also be updated like that:
+
+    config_var.value = 'new value'
+
+And it'll instantly get updated.
 
 ### Domains
 
 Access domains used by the application:
 
-    app.domains
+    domains = app.domains
+
+Same as with other collection objects, they can be added or deleted:
+
+    domains.add 'domain.com'
+    domains.delete 'domain.com'
+
+or:
+
+    domain.delete!
 
 ### Processes
 
 Get current application processes:
 
-    app.collaborators
+    processes = app.processes
+
+You can also run, restart, scale, and stop method collections:
+
+    processes.run 'rake evolve'
+    processes.restart
+    process.scale 'worker', 10
+    process.stop 'ps' => 'run.1'
+    process.stop 'type' => 'worker'
 
 ### Releases
 
 List all app releases:
 
-    app.releases
+    releases = app.releases
+
+And rollback to any release:
+
+    releases.rollback 'v1'
 
 ## Mock
 
