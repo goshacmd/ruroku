@@ -162,6 +162,16 @@ And rollback to any release:
 
     releases.rollback 'v1'
 
+### Stacks
+
+List stacks, available for the app:
+
+    app.stacks
+
+Migrate the app to available stack:
+
+    stacks.migrate 'stack-name'
+
 ## Mock
 
 For practice or testing you can also use a simulated Heroku:

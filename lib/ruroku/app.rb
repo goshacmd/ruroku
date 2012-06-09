@@ -29,6 +29,11 @@ module Ruroku
       ReleaseSet.new self, *api.get_releases(name).body.map { |release| Release.new self, release }
     end
 
+    # Public: Get available stacks for current app.
+    def stacks
+      StackSet.new self, *api.get_stacks(name).body.map { |stack| Stack.new self, stack }
+    end
+
     # Public: Turn the maintenance mode on.
     def maintenance!
       api.post_app_maintenance name, '1'
