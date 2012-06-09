@@ -1,0 +1,12 @@
+module Ruroku
+  class ConfigVarSet < ResourceSet
+    # Map API methods to collection methods.
+    #
+    # Examples
+    #
+    #   config_vars.add 'KEY' => 'value'
+    #   config_vars.delete 'KEY' => 'value'
+    map_api add: :post_config_vars,
+      delete: :delete_config_var
+  end
+end
