@@ -149,28 +149,71 @@ well:</p>
 
 <p>List all app config vars:</p>
 
-<pre><code>app.config_vars
+<pre><code>config_vars = app.config_vars
 </code></pre>
+
+<p>Add or delete a config var:</p>
+
+<pre><code>config_vars.add 'KEY' =&gt; 'value'
+config_vars.delete 'KEY'
+</code></pre>
+
+<p>or:</p>
+
+<pre><code>config_var.delete!
+</code></pre>
+
+<p>They can also be updated like that:</p>
+
+<pre><code>config_var.value = 'new value'
+</code></pre>
+
+<p>And it'll instantly get updated.</p>
 
 <h3>Domains</h3>
 
 <p>Access domains used by the application:</p>
 
-<pre><code>app.domains
+<pre><code>domains = app.domains
+</code></pre>
+
+<p>Same as with other collection objects, they can be added or deleted:</p>
+
+<pre><code>domains.add 'domain.com'
+domains.delete 'domain.com'
+</code></pre>
+
+<p>or:</p>
+
+<pre><code>domain.delete!
 </code></pre>
 
 <h3>Processes</h3>
 
 <p>Get current application processes:</p>
 
-<pre><code>app.collaborators
+<pre><code>processes = app.processes
+</code></pre>
+
+<p>You can also run, restart, scale, and stop method collections:</p>
+
+<pre><code>processes.run 'rake evolve'
+processes.restart
+process.scale 'worker', 10
+process.stop 'ps' =&gt; 'run.1'
+process.stop 'type' =&gt; 'worker'
 </code></pre>
 
 <h3>Releases</h3>
 
 <p>List all app releases:</p>
 
-<pre><code>app.releases
+<pre><code>releases = app.releases
+</code></pre>
+
+<p>And rollback to any release:</p>
+
+<pre><code>releases.rollback 'v1'
 </code></pre>
 
 <h2>Mock</h2>
@@ -202,6 +245,5 @@ heroku = Ruroku::API.new api_key: API_KEY, mock: true
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
   </body>
 </html>
