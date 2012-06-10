@@ -7,7 +7,7 @@ module Ruroku
     #
     # Examples
     #
-    #   apps.create 'another-app', 'cedar'
+    #   apps.create name: 'another-app', stack: 'cedar'
     map_api create: :post_app
   end
 end
