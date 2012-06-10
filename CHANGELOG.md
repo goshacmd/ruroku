@@ -1,5 +1,10 @@
 ## Ruroku 0.0.3 (unreleased)
 
+* Added release finder: `releases[2]` and `releases['v2']`.
+* Added process finder, which can return specific process or process
+  group: `processes['web.1']` and `processes['web']`.
+* Added app, collaborator finders, now possible to `apps['app-name']` or
+  `collaborators['email@me.com']`.
 * Added logs access
 * Added config var access convenience method `#[]`, so it's possible to
   `app.config_vars['KEY']` to get specific `Ruroku::ConfigVar`.

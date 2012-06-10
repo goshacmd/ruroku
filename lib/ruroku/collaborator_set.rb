@@ -11,5 +11,14 @@ module Ruroku
     #   collaborators.delete 'collaborator-email'
     map_api add: :post_collaborator,
       delete: :delete_collaborator
+
+    # Public: Find a Collaborator with specified email.
+    #
+    # Examples
+    #
+    #   collaborators['guy@me.com']
+    def [](collaborator_email)
+      select { |collaborator| collaborator.email == collaborator_email }.first
+    end
   end
 end

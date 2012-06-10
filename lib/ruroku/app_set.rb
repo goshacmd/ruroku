@@ -9,5 +9,14 @@ module Ruroku
     #
     #   apps.create name: 'another-app', stack: 'cedar'
     map_api create: :post_app
+
+    # Public: Find an App with specified name.
+    #
+    # Examples
+    #
+    #   apps['test-app']
+    def [](app_name)
+      select { |app| app.name == app_name }.first
+    end
   end
 end

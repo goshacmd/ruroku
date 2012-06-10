@@ -48,6 +48,10 @@ To get specific app:
 
 ```ruby
 app = heroku.app 'app-name'
+
+# or:
+
+app = heroku.apps['app-name']
 ```
 
 And access its properties such as:
@@ -117,6 +121,12 @@ List all app collaborators:
 collaborators = app.collaborators
 ```
 
+get a specific collaborator:
+
+```ruby
+collaborators['guy@me.com']
+```
+
 and
 
 ```ruby
@@ -152,6 +162,13 @@ They can also be updated like that:
 
 ```ruby
 config_var.value = 'new value'
+```
+
+Get/set a specific var:
+
+```ruby
+config_vars['DEBUG'] # => false
+config_vars['DEBUG'] = true
 ```
 
 And it'll instantly get updated.
@@ -193,12 +210,26 @@ processes.stop 'ps' => 'run.1'
 processes.stop 'type' => 'worker'
 ```
 
+And access specific processes/process groups:
+
+```ruby
+processes['web.1']
+processes['web']
+```
+
 ### Releases
 
 List all app releases:
 
 ```ruby
 releases = app.releases
+```
+
+Get specific release:
+
+```ruby
+releases[2]
+releases['v2']
 ```
 
 And rollback to any release:

@@ -16,5 +16,20 @@ module Ruroku
       restart: :post_ps_restart,
       scale: :ps_scale,
       stop: :post_ps_stop
+
+    # Public: Find either a process when specified full process name,
+    # or a collection of processes, if specified a process type.
+    #
+    # Examples
+    #
+    #   processes['web.1']
+    #   processes['web']
+    def [](process_name)
+      if process_name.include? '.'
+        select { |process| process.type == process_name }
+      else
+        select { |process| process.process == process_name }.first
+      end
+    end
   end
 end

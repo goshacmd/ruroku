@@ -12,7 +12,7 @@ module Ruroku
     map_api add: :post_config_vars,
       delete: :delete_config_var
 
-    # Public: Find a ConfigVar with specific name.
+    # Public: Find a ConfigVar with specified name.
     #
     # Examples
     #
