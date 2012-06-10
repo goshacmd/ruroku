@@ -1,5 +1,6 @@
 ## Ruruku 0.0.2  (unreleased)
 
+* Added collection caching
 * Added support of keys
 * Finding app by name
 * Added support of stacks
