@@ -3,6 +3,7 @@ module Ruroku
     attribute :email, String
     attribute :access, String
 
-    deletable :email
+    resource_id :email
+    deletable_resource
   end
 end

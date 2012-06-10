@@ -3,7 +3,8 @@ module Ruroku
     attribute :key, String
     attribute :value, String
 
-    deletable :key
+    resource_id :key
+    deletable_resource
 
     def value=(new_value)
       if @value.nil?

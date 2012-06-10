@@ -7,6 +7,7 @@ module Ruroku
     attribute :price, Hash
     attribute :beta, Boolean, default: false
 
-    deletable :name
+    resource_id :name
+    deletable_resource
   end
 end

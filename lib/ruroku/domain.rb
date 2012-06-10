@@ -7,6 +7,7 @@ module Ruroku
     attribute :created_at, Time
     attribute :updated_at, Time
 
-    deletable :domain
+    resource_id :domain
+    deletable_resource
   end
 end
