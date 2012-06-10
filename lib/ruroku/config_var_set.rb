@@ -11,5 +11,16 @@ module Ruroku
     #   config_vars.delete 'KEY'
     map_api add: :post_config_vars,
       delete: :delete_config_var
+
+    # Public: Find a ConfigVar with specific name.
+    #
+    # Examples
+    #
+    #   config_vars['DEBUG']
+    #
+    # Returns the ConfigVar object.
+    def [](var_name)
+      select { |var| var.key == var_name }.first
+    end
   end
 end

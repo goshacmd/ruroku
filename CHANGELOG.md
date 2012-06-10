@@ -1,5 +1,7 @@
 ## Ruroku 0.0.3 (unreleased)
 
+* Added config var access convenience method `#[]`, so it's possible to
+  `app.config_vars['KEY']` to get specific `Ruroku::ConfigVar`.
 * Added `#rollback` to `Ruroku::Release`
 * Added ability to rename apps
 * Added ability to transfer app ownership
