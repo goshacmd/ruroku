@@ -60,7 +60,7 @@ module Helpers
   def stubbed_app
     app = double 'app'
     app.stub(:api).and_return stubbed_api
-    app.stub(:name).and_return 'The App'
+    app.stub(:name).and_return 'test-app'
     app.stub(:keys).and_return Ruroku::Key.new(app, {})
 
     app

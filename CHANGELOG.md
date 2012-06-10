@@ -1,5 +1,6 @@
 ## Ruroku 0.0.3 (unreleased)
 
+* Added `#rollback` to `Ruroku::Release`
 * Added ability to rename apps
 * Added ability to transfer app ownership
 * Added ability to delete apps

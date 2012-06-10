@@ -10,5 +10,14 @@ module Ruroku
     attribute :created_at, Time
 
     resource_id :name
+
+    # Public: Rollback to specific release.
+    #
+    # Examples
+    #
+    #   release.rollback
+    def rollback
+      api.post_release app.name, name
+    end
   end
 end

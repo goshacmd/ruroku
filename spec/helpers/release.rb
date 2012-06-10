@@ -9,6 +9,10 @@ module Helpers
     }
   end
 
+  def release_response
+    stubbed_response release_data
+  end
+
   def releases_response
     stubbed_response [release_data]
   end
