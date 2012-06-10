@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Ruroku::VERSION
 
-  gem.add_runtime_dependency 'heroku-api', '~> 0.2.4'
+  gem.add_runtime_dependency 'heroku-api', '~> 0.2'
   gem.add_runtime_dependency 'activesupport', '~> 3.2.5'
-  gem.add_runtime_dependency 'virtus', '~> 0.5.0'
+  gem.add_runtime_dependency 'virtus', '~> 0.5'
 end
