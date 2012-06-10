@@ -176,11 +176,11 @@ Migrate the app to available stack:
 
     stacks.migrate 'stack-name'
 
-## User
+### User
 
     heroku.user
 
-## Keys
+### Keys
 
 Access all keys:
 
