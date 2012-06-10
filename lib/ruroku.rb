@@ -11,6 +11,7 @@ require "ruroku/nested_resource_set"
 
 require "ruroku/api"
 require "ruroku/app"
+require "ruroku/app_set"
 require "ruroku/addon"
 require "ruroku/addon_set"
 require "ruroku/collaborator"

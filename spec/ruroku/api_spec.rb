@@ -11,7 +11,7 @@ describe Ruroku::API do
     
     it 'returns array of apps' do
       apps = api.apps
-      apps.instance_of?(Array).should be_true
+      apps.instance_of?(Ruroku::AppSet).should be_true
       apps.each { |app| app.instance_of?(Ruroku::App).should be_true }
     end
   end

@@ -10,7 +10,7 @@ module Ruroku
     #
     # Returns the Array[App].
     def apps
-      @apps ||= heroku_api.get_apps.body.map { |app| App.new heroku_api, app }
+      @apps ||= AppSet.new heroku_api
     end
 
     # Public: Get specific app.
