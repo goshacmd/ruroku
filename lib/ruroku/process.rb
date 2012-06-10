@@ -13,6 +13,8 @@ module Ruroku
     attribute :attached, Boolean, default: false
     attribute :transitioned_at, Time
 
+    resource_id :process
+
     # Public: Restart the process.
     def restart
       api.post_ps_restart app.name, 'ps' => process

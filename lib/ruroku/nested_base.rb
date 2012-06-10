@@ -8,15 +8,6 @@ module Ruroku
       super app.api, attributes
     end
 
-    # Public: Define resource id key.
-    def self.resource_id(id_key = nil)
-      if id_key
-        @_resource_id = id_key
-      else
-        @_resource_id
-      end
-    end
-
     # Public: Make resource deletable.
     def self.deletable_resource
       resource_name = name.demodulize.underscore

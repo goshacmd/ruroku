@@ -97,12 +97,12 @@ describe Ruroku::App do
 
   describe '#stacks' do
     it 'gets stacks from api' do
-      heroku.should_receive(:get_stacks).and_return stacks_response
+      heroku.should_receive(:get_stack).and_return stacks_response
       @app.stacks
     end
     
     it 'returns stack set' do
-      heroku.stub(:get_stacks).and_return stacks_response
+      heroku.stub(:get_stack).and_return stacks_response
       
       stacks = @app.stacks
       stacks.instance_of?(Ruroku::StackSet).should be_true

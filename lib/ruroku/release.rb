@@ -8,5 +8,7 @@ module Ruroku
     attribute :addons, Array
     attribute :pstable, Hash
     attribute :created_at, Time
+
+    resource_id :name
   end
 end

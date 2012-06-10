@@ -14,5 +14,9 @@ module Ruroku
         @value = new_value
       end
     end
+
+    def inspect
+      "<#{self.class} #{key} => #{value}>"
+    end
   end
 end

@@ -27,5 +27,9 @@ module Ruroku
     def user
       User.new heroku_api, heroku_api.get_user.body
     end
+
+    def inspect
+      "<#{self.class}>"
+    end
   end
 end

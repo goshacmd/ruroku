@@ -13,6 +13,8 @@ module Ruroku
     attribute :workers, Integer
     attribute :created_at, Time
 
+    resource_id :name
+
     # Public: Get addons associated with current app.
     def addons
       AddonSet.new self, *api.get_addons(name).body.map { |addon| Addon.new self, addon }
@@ -45,7 +47,7 @@ module Ruroku
 
     # Public: Get available stacks for current app.
     def stacks
-      StackSet.new self, *api.get_stacks(name).body.map { |stack| Stack.new self, stack }
+      StackSet.new self, *api.get_stack(name).body.map { |stack| Stack.new self, stack }
     end
 
     # Public: Turn the maintenance mode on.

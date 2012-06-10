@@ -9,5 +9,7 @@ module Ruroku
     attribute :verified_at, Time
     attribute :last_login, Time
     attribute :created_at, Time
+
+    resource_id :email
   end
 end

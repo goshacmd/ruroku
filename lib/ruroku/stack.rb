@@ -4,5 +4,7 @@ module Ruroku
     attribute :current, Boolean, default: false
     attribute :requested, Boolean, default: false
     attribute :beta, Boolean, default: false
+
+    resource_id :name
   end
 end
