@@ -38,7 +38,7 @@ module Ruroku
     # Public: Build a resource from response.
     def build_resource(response)
       resource_class = self.class.resource_class
-      resource_class.new response
+      resource_class.new api, response
     end
 
     # Public: Get params for querying collection.
