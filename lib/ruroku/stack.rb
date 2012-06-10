@@ -1,17 +1,8 @@
 module Ruroku
   class Stack < NestedBase
-    attr_accessor :name, :current, :requested, :beta
-
-    def current?
-      !!current
-    end
-
-    def requested?
-      !!requested
-    end
-
-    def beta?
-      !!beta
-    end
+    attribute :name, String
+    attribute :current, Boolean, default: false
+    attribute :requested, Boolean, default: false
+    attribute :beta, Boolean, default: false
   end
 end

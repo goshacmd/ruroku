@@ -1,6 +1,8 @@
 module Ruroku
   class ConfigVar < NestedBase
-    attr_accessor :key, :value
+    attribute :key, String
+    attribute :value, String
+
     deletable :key
 
     def value=(new_value)

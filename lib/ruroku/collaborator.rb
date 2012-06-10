@@ -1,6 +1,8 @@
 module Ruroku
   class Collaborator < NestedBase
-    attr_accessor :email, :access
+    attribute :email, String
+    attribute :access, String
+
     deletable :email
   end
 end

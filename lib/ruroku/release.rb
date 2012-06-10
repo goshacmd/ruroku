@@ -1,10 +1,12 @@
 module Ruroku
   class Release < NestedBase
-    attr_accessor :name, :descr, :user, :commit, :env, :addons, :pstable,
-      :created_at
-
-    def created_at=(value)
-      @created_at = Time.parse value
-    end
+    attribute :name, String
+    attribute :descr, String
+    attribute :user, String
+    attribute :commit, String
+    attribute :env, Hash
+    attribute :addons, Array
+    attribute :pstable, Hash
+    attribute :created_at, Time
   end
 end

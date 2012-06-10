@@ -12,5 +12,10 @@ module Ruroku
     def apps
       heroku_api.get_apps.body.map { |app| App.new heroku_api, app }
     end
+
+    # Public: Get User object associated with current heroku account.
+    def user
+      User.new heroku_api, heroku_api.get_user.body
+    end
   end
 end

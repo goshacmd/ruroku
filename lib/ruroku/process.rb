@@ -1,7 +1,17 @@
 module Ruroku
   class Process < NestedBase
-    attr_accessor :process, :type, :command, :upid, :slug, :action,
-      :pretty_state, :elapsed, :rendezvous_url, :attached, :transitioned_at
+    attribute :process, String
+    attribute :type, String
+    attribute :command, String
+    attribute :upid, String
+    attribute :slug, String
+    attribute :action, String
+    attribute :state, String
+    attribute :pretty_state, String
+    attribute :elapsed, Integer
+    attribute :rendezvous_url, String
+    attribute :attached, Boolean, default: false
+    attribute :transitioned_at, Time
 
     # Public: Restart the process.
     def restart
@@ -11,15 +21,6 @@ module Ruroku
     # Public: Stop the process.
     def stop
       api.post_ps_stop app.name, 'ps' => process
-    end
-
-    # Public: Check if the process is attached.
-    def attached?
-      !!attached
-    end
-
-    def transitioned_at=(value)
-      @transitioned_at = Time.parse value
     end
   end
 end

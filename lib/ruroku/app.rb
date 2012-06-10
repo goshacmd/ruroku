@@ -1,8 +1,17 @@
 module Ruroku
   class App < Base
-    attr_accessor :id, :name, :create_status, :created_at, :stack, :git_url,
-      :requested_stack, :repo_migrate_status, :slug_size, :repo_size,
-      :dynos, :workers
+    attribute :id, Integer
+    attribute :name, String
+    attribute :create_status, String
+    attribute :stack, String
+    attribute :requested_stack, String
+    attribute :git_url, String
+    attribute :repo_migrate_status, String
+    attribute :slug_size, Integer
+    attribute :repo_size, Integer
+    attribute :dynos, Integer
+    attribute :workers, Integer
+    attribute :created_at, Time
 
     # Public: Get addons associated with current app.
     def addons
@@ -17,6 +26,11 @@ module Ruroku
     # Public: Get config vars associated with current app.
     def config_vars
       ConfigVarSet.new self, *api.get_config_vars(name).body.map { |key, value| ConfigVar.new self, key: key, value: value }
+    end
+
+    # Public: Get domains associated with current app.
+    def domains
+      DomainSet.new self, *api.get_domains(name).body.map { |domain| Domain.new self, domain }
     end
 
     # Public: Get processes associated with current app.
@@ -42,18 +56,6 @@ module Ruroku
     # Public: Turn the maintenance mode off.
     def no_maintenance!
       api.post_app_maintenance name, '0'
-    end
-
-    def created_at=(value)
-      @created_at = Time.parse value
-    end
-
-    def slug_size=(value)
-      @slug_size = value.to_i.bytes
-    end
-
-    def repo_size=(value)
-      @repo_size = value.to_i.bytes
     end
   end
 end

@@ -1,11 +1,12 @@
 module Ruroku
   class Addon < NestedBase
-    attr_accessor :name, :description, :url, :state, :price, :beta
-    deletable :name
+    attribute :name, String
+    attribute :description, String
+    attribute :url, String
+    attribute :state, String
+    attribute :price, Hash
+    attribute :beta, Boolean, default: false
 
-    # Public: Check if the addon is in beta.
-    def beta?
-      !!beta
-    end
+    deletable :name
   end
 end
