@@ -13,6 +13,11 @@ module Ruroku
       heroku_api.get_apps.body.map { |app| App.new heroku_api, app }
     end
 
+    # Public: Get specific app.
+    def app(app_name)
+      App.new heroku_api, heroku_api.get_app(app_name).body
+    end
+
     # Public: Get User object associated with current heroku account.
     def user
       User.new heroku_api, heroku_api.get_user.body

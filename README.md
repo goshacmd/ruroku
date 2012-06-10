@@ -38,6 +38,10 @@ access an Array of all the associated apps with `#apps`:
     
     app = heroku.apps.first
 
+To get specific app:
+
+    app = heroku.app 'app-name'
+
 You then can get additional app info:
 
     app.id
