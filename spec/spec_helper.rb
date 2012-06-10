@@ -7,6 +7,12 @@ require 'helpers/app'
 require 'helpers/keys'
 require 'helpers/user'
 require 'helpers/addon'
+require 'helpers/collaborator'
+require 'helpers/config_var'
+require 'helpers/domain'
+require 'helpers/process'
+require 'helpers/release'
+require 'helpers/stack'
 
 module Helpers
   extend ActiveSupport::Concern
