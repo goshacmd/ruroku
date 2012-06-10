@@ -4,8 +4,8 @@ require File.expand_path('../lib/ruroku/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Gosha Arinich"]
   gem.email         = ["me@goshakkk.name"]
-  gem.description   = %q{Ruby client for the Heroku API}
-  gem.summary       = %q{Ruby client for the Heroku API}
+  gem.description   = %q{The better Ruby client for the Heroku API}
+  gem.summary       = %q{The better Ruby client for the Heroku API}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
