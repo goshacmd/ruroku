@@ -1,5 +1,5 @@
 module Ruroku
-  class ReleaseSet < ResourceSet
+  class ReleaseSet < NestedResourceSet
     # Map API methods to collection methods.
     #
     # Examples

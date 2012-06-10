@@ -18,6 +18,11 @@ module Ruroku
       App.new heroku_api, heroku_api.get_app(app_name).body
     end
 
+    # Public: Get keys associated with current heroku account.
+    def keys
+      heroku_api.get_keys.body.map { |key| Key.new heroku_api, key }
+    end
+
     # Public: Get User object associated with current heroku account.
     def user
       User.new heroku_api, heroku_api.get_user.body

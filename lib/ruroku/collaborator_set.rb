@@ -1,5 +1,5 @@
 module Ruroku
-  class CollaboratorSet < ResourceSet
+  class CollaboratorSet < NestedResourceSet
     # Map API methods to collection methods.
     #
     # Examples

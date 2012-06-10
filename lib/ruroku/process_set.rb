@@ -1,5 +1,5 @@
 module Ruroku
-  class ProcessSet < ResourceSet
+  class ProcessSet < NestedResourceSet
     # Publc: Run the command.
     #
     # command - The String command.

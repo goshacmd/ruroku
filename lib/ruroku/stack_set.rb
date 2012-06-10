@@ -1,5 +1,5 @@
 module Ruroku
-  class StackSet < ResourceSet
+  class StackSet < NestedResourceSet
     # Map API methods to collection methods.
     #
     # Examples

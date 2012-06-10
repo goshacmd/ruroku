@@ -1,5 +1,5 @@
 module Ruroku
-  class AddonSet < ResourceSet
+  class AddonSet < NestedResourceSet
     # Map API methods to collection methods.
     #
     # Examples

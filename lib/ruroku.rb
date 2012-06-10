@@ -7,6 +7,7 @@ require "time"
 require "ruroku/base"
 require "ruroku/nested_base"
 require "ruroku/resource_set"
+require "ruroku/nested_resource_set"
 
 require "ruroku/api"
 require "ruroku/app"
@@ -22,6 +23,9 @@ require "ruroku/process"
 require "ruroku/process_set"
 require "ruroku/release"
 require "ruroku/release_set"
+require "ruroku/user"
+require "ruroku/key"
+require "ruroku/key_set"
 require "ruroku/version"
 
 module Ruroku

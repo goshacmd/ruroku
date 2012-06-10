@@ -1,5 +1,5 @@
 module Ruroku
-  class ConfigVarSet < ResourceSet
+  class ConfigVarSet < NestedResourceSet
     # Map API methods to collection methods.
     #
     # Examples

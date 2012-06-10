@@ -176,6 +176,29 @@ Migrate the app to available stack:
 
     stacks.migrate 'stack-name'
 
+## User
+
+    heroku.user
+
+## Keys
+
+Access all keys:
+
+    keys = heroku.keys
+
+Add a key:
+
+    keys.add 'content of id_rsa.pub here...'
+
+Delete speicif key:
+
+    keys.delete 'email@me.com'
+    key.delete!
+
+Delete all keys:
+
+    keys.delete_all
+
 ## Mock
 
 For practice or testing you can also use a simulated Heroku:
