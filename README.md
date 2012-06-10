@@ -52,14 +52,14 @@ app = heroku.app 'app-name'
 
 And access its properties such as:
 
-* id
-* name
-* stack
-* git_url
-* slug_size
-* repo_size
-* dynos
-* workers
+* `id`
+* `name`
+* `stack`
+* `git_url`
+* `slug_size`
+* `repo_size`
+* `dynos`
+* `workers`
 
 Maintenance mode can be turned on and off:
 
@@ -179,9 +179,9 @@ You can also run, restart, scale, and stop method collections:
 ```ruby
 processes.run 'rake evolve'
 processes.restart
-process.scale 'worker', 10
-process.stop 'ps' => 'run.1'
-process.stop 'type' => 'worker'
+processes.scale 'worker', 10
+processes.stop 'ps' => 'run.1'
+processes.stop 'type' => 'worker'
 ```
 
 ### Releases
@@ -234,7 +234,7 @@ Add a key:
 keys.add 'content of id_rsa.pub here...'
 ```
 
-Delete speicif key:
+Delete specific key:
 
 ```ruby
 keys.delete 'email@me.com'
