@@ -10,8 +10,8 @@ module Ruroku
 
     def self.map_api(methods)
       methods.each do |method_name, api_mapping|
-        define_method method_name do |resource_name|
-          api.send api_mapping, resource_name
+        define_method method_name do |*args|
+          api.send api_mapping, *args
         end
       end
     end

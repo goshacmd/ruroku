@@ -1,37 +1,17 @@
 module Ruroku
   class ProcessSet < NestedResourceSet
-    # Publc: Run the command.
+    # Map API methods to collection methods.
     #
-    # command - The String command.
-    def run(command)
-      api.post_ps app.name, command
-    end
-
-    # Public: Restart all the processes.
-    def restart
-      api.post_ps_restart app.name
-    end
-
-    # Public: Scale processes.
-    #
-    # type - The String process type.
-    # qty  - The Integer process quantity.
-    def scale(type, qty)
-      api.ps_scale app.name, type, qty
-    end
-
-    # Public: Stop the process(es).
-    #
-    # options - The Hash
-    #           either :ps   - The String process name
-    #               or :type - The String process type
-    # 
     # Examples
     #
+    #   processes.run 'rake task'
+    #   processes.restart
+    #   processes.scale 'web', 10
     #   processes.stop 'ps' => 'web.1'
     #   processes.stop 'type' => 'web'
-    def stop(options)
-      api.post_ps_stop app.name, options
-    end
+    map_api run: :post_ps,
+      restart: :post_ps_restart,
+      scale: :ps_scale,
+      stop: :post_ps_stop
   end
 end
