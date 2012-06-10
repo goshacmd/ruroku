@@ -221,6 +221,14 @@ Migrate the app to available stack:
 stacks.migrate 'stack-name'
 ```
 
+### Logs
+
+Get the Array of String log lines:
+
+```ruby
+app.logs
+```
+
 ### User
 
 Get User object associtaed with current heroku account:

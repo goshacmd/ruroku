@@ -1,4 +1,5 @@
 require "time"
+require "net/http"
 require "heroku-api"
 require "virtus"
 require "active_support/core_ext/numeric"

@@ -1,5 +1,6 @@
 ## Ruroku 0.0.3 (unreleased)
 
+* Added logs access
 * Added config var access convenience method `#[]`, so it's possible to
   `app.config_vars['KEY']` to get specific `Ruroku::ConfigVar`.
 * Added `#rollback` to `Ruroku::Release`

@@ -50,6 +50,27 @@ module Ruroku
       @stacks ||= StackSet.new self
     end
 
+    # Public: Get app logs.
+    #
+    # Examples
+    #
+    #   app.logs
+    #
+    # Returns the Array of String log lines.
+    def logs
+      log_url = api.get_logs(name).body
+      log_uri = URI.parse log_url
+
+      http = Net::HTTP.new log_uri.host, log_uri.port
+      http.use_ssl = true
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      request = Net::HTTP::Get.new log_uri.request_uri
+
+      data = http.request request
+
+      data.body.split "\n"
+    end
+
     # Public: Turn the maintenance mode on.
     def maintenance!
       api.post_app_maintenance name, '1'

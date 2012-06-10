@@ -1,2 +1,1 @@
-* Logs
 * Collection finder methods
