@@ -59,5 +59,30 @@ module Ruroku
     def no_maintenance!
       api.post_app_maintenance name, '0'
     end
+
+    # Public: Rename the app.
+    #
+    # Examples
+    #
+    #   app.rename 'new-name'
+    def rename(new_name)
+      api.put_app name, name: new_name
+      self.name = new_name
+    end
+
+    # Public: Transfer app ownership.
+    #
+    # Examples
+    #
+    #   app.transfer_ownership 'new_owner@me.com'
+    def transfer_ownership(new_owner)
+      api.put_app name, transfer_owner: new_owner
+    end
+
+    def delete!
+      api_method = "delete_app"
+      resource_id = name
+      api.send api_method, name, resource_id
+    end
   end
 end

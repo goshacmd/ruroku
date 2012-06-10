@@ -1,4 +1,10 @@
-## Ruruku 0.0.2  (Jun 10, 2012)
+## Ruroku 0.0.3 (unreleased)
+
+* Added ability to rename apps
+* Added ability to transfer app ownership
+* Added ability to delete apps
+
+## Ruroku 0.0.2 (Jun 10, 2012)
 
 * Added collection reloading
 * Added collection caching

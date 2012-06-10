@@ -110,4 +110,18 @@ describe Ruroku::App do
       @app.no_maintenance!
     end
   end
+
+  describe '#rename' do
+    it 'renames the app' do
+      heroku.should_receive(:put_app).with(@app.name, name: 'new-app')
+      @app.rename 'new-app'
+    end
+  end
+
+  describe '#transfer_ownership' do
+    it 'transfers app ownership' do
+      heroku.should_receive(:put_app).with(@app.name, transfer_owner: 'new_owner@me.com')
+      @app.transfer_ownership 'new_owner@me.com'
+    end
+  end
 end
