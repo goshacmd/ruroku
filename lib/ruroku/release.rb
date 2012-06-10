@@ -19,5 +19,9 @@ module Ruroku
     def rollback
       api.post_release app.name, name
     end
+
+    def to_i
+      name[1..-1]
+    end
   end
 end

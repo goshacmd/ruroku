@@ -1,5 +1,6 @@
 ## Ruroku 0.0.3 (unreleased)
 
+* Added release range finder: `releases[1..10]`
 * Added release finder: `releases[2]` and `releases['v2']`
 * Added process finder, which can return specific process or process
   group: `processes['web.1']` and `processes['web']`

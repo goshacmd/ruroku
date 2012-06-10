@@ -17,9 +17,13 @@ module Ruroku
     #   releases[2]
     #   releases['v2']
     def [](release_name)
-      release_name = "v#{release_name}" if release.instance_of? Fixnum
+      if release_name.instance_of? Range
+        select { |release| release_name.include? release.to_i }
+      else
+        release_name = "v#{release_name}" if release.instance_of? Fixnum
 
-      select { |release| release.name == release_name }.first
+        select { |release| release.name == release_name }.first
+      end
     end
   end
 end

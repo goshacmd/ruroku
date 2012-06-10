@@ -232,6 +232,12 @@ releases[2]
 releases['v2']
 ```
 
+Or a range of releases:
+
+```ruby
+releases[1..10]
+```
+
 And rollback to any release:
 
 ```ruby
