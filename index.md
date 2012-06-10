@@ -27,239 +27,34 @@ Or install it yourself as:
 
 Start by initiating a connection with Heroku API:
 
-```ruby
-heroku = Ruroku::API.new api_key: YOUR_HEROKU_API_KEY
-```
+    heroku = Ruroku::API.new api_key: YOUR_HEROKU_API_KEY
 
 (You can leave out `:api_key` if `ENV['HEROKU_API_KEY']` is set
 instead.)
 
 Now you can interact with Heroku API using Ruroku.
 
-### Apps
-
-Each API object has apps associated with the Heroku account. You can
-access an Array of all the associated apps with `#apps`:
-
-```ruby
-heroku.apps
-# => [#<App>, #<App>, #<App>]
-
-app = heroku.apps.first
-```
-
-To get specific app:
-
-```ruby
-app = heroku.app 'app-name'
-```
-
-And access its properties such as:
-
-* id
-* name
-* stack
-* git_url
-* slug_size
-* repo_size
-* dynos
-* workers
-
-Maintenance mode can be turned on and off:
-
-```ruby
-app.maintenance!
-app.no_maintenance!
-```
-
-### Addons
-
-To get a list of addons used by a particular app:
-
-```ruby
-addons = app.addons
-# => [#<Addon>, #<Addon>, #<Addon>]
-
-addon = app.addons.first
-```
-
-It's possible perform several actions on addon collections:
-
-```ruby
-# Add an addon
-addons.add 'addon:plan'
-
-# Remove an addon
-addons.delete 'addon-name'
-
-# Upgrade an addon
-addons.upgrade 'addon:new-plan'
-```
-
-Each addon object is associated with the application. You can delete
-addons from the app by calling `#delete` method on the addon object as
-well:
-
-```ruby
-addon.delete!
-```
-
-### Collaborators
-
-List all app collaborators:
-
-```ruby
-collaborators = app.collaborators
-```
-
-and
-
-```ruby
-# Add a collaborator
-collaborators.add 'email@me.com'
-
-# Remove a collaborator
-collaborators.delete 'email@me.com'
-# or
-collaborator.delete!
-```
-
-### Config variables
-
-List all app config vars:
-
-```ruby
-config_vars = app.config_vars
-```
-
-Add or delete a config var:
-
-```ruby
-config_vars.add 'KEY' => 'value'
-config_vars.delete 'KEY'
-
-# or:
-
-config_var.delete!
-```
-
-They can also be updated like that:
-
-```ruby
-config_var.value = 'new value'
-```
-
-And it'll instantly get updated.
-
-### Domains
-
-Access domains used by the application:
-
-```ruby
-domains = app.domains
-```
-
-Same as with other collection objects, they can be added or deleted:
-
-```ruby
-domains.add 'domain.com'
-domains.delete 'domain.com'
-
-# or:
-
-domain.delete!
-```
-
-### Processes
-
-Get current application processes:
-
-```ruby
-processes = app.processes
-```
-
-You can also run, restart, scale, and stop method collections:
-
-```ruby
-processes.run 'rake evolve'
-processes.restart
-process.scale 'worker', 10
-process.stop 'ps' => 'run.1'
-process.stop 'type' => 'worker'
-```
-
-### Releases
-
-List all app releases:
-
-```ruby
-releases = app.releases
-```
-
-And rollback to any release:
-
-```ruby
-releases.rollback 'v1'
-```
-
-### Stacks
-
-List stacks, available for the app:
-
-```ruby
-app.stacks
-```
-
-Migrate the app to available stack:
-
-```ruby
-stacks.migrate 'stack-name'
-```
-
-### User
-
-Get User object associtaed with current heroku account:
-
-```ruby
-heroku.user
-```
-
-### Keys
-
-Access all keys:
-
-```ruby
-keys = heroku.keys
-```
-
-Add a key:
-
-```ruby
-keys.add 'content of id_rsa.pub here...'
-```
-
-Delete speicif key:
-
-```ruby
-keys.delete 'email@me.com'
-key.delete!
-```
-
-Delete all keys:
-
-```ruby
-keys.delete_all
-```
+It has support of:
+
+* Apps
+* Addons
+* Collaborators
+* Environment variables
+* Domains
+* Processes
+* Releases
+* Stacks
+* Keys
+
+Read more on [Ruroku README](https://github.com/goshakkk/ruroku/blob/master/README.md).
 
 ## Mock
 
 For practice or testing you can also use a simulated Heroku:
 
-```ruby
-require 'ruroku'
+      require 'ruroku'
 
-heroku = Ruroku::API.new api_key: API_KEY, mock: true
-```
+      heroku = Ruroku::API.new api_key: API_KEY, mock: true
 
 After that commands should still behave the same, but they will only modify some local data instead of updating the state of things on Heroku.
 
