@@ -7,9 +7,5 @@ module Ruroku
     def beta?
       !!beta
     end
-
-    def price=(value)
-      @price = value
-    end
   end
 end
