@@ -7,8 +7,6 @@ module Ruroku
     end
 
     # Public: Get apps associated with current heroku account.
-    #
-    # Returns the Array[App].
     def apps
       @apps ||= AppSet.new heroku_api
     end
