@@ -1,8 +1,8 @@
+require "time"
 require "heroku-api"
 require "virtus"
 require "active_support/core_ext/numeric"
 require "active_support/core_ext/string"
-require "time"
 
 require "ruroku/base"
 require "ruroku/nested_base"
