@@ -3,7 +3,7 @@ layout: default
 ---
 
 # Ruroku
-![Build Status](https://secure.travis-ci.org/goshakkk/ruroku.png)](http://travis-ci.org/goshakkk/ruroku)
+[![Build Status](https://secure.travis-ci.org/goshakkk/ruroku.png)](http://travis-ci.org/goshakkk/ruroku)
 
 The better Ruby client for Heroku API, built on top of official
 `heroku.rb` gem.
