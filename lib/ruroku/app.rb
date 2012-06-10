@@ -17,37 +17,37 @@ module Ruroku
 
     # Public: Get addons associated with current app.
     def addons
-      AddonSet.new self, *api.get_addons(name).body.map { |addon| Addon.new self, addon }
+      @addons ||= AddonSet.new self, *api.get_addons(name).body.map { |addon| Addon.new self, addon }
     end
 
     # Public: Get collaborators associated with current app.
     def collaborators
-      CollaboratorSet.new self, *api.get_collaborators(name).body.map { |collaborator| Collaborator.new self, collaborator }
+      @collaborators ||= CollaboratorSet.new self, *api.get_collaborators(name).body.map { |collaborator| Collaborator.new self, collaborator }
     end
 
     # Public: Get config vars associated with current app.
     def config_vars
-      ConfigVarSet.new self, *api.get_config_vars(name).body.map { |key, value| ConfigVar.new self, key: key, value: value }
+      @config_vars ||= ConfigVarSet.new self, *api.get_config_vars(name).body.map { |key, value| ConfigVar.new self, key: key, value: value }
     end
 
     # Public: Get domains associated with current app.
     def domains
-      DomainSet.new self, *api.get_domains(name).body.map { |domain| Domain.new self, domain }
+      @domains ||= DomainSet.new self, *api.get_domains(name).body.map { |domain| Domain.new self, domain }
     end
 
     # Public: Get processes associated with current app.
     def processes
-      ProcessSet.new self, *api.get_ps(name).body.map { |ps| Process.new self, ps }
+      @processes ||= ProcessSet.new self, *api.get_ps(name).body.map { |ps| Process.new self, ps }
     end
 
     # Public: Get releases associated with current app.
     def releases
-      ReleaseSet.new self, *api.get_releases(name).body.map { |release| Release.new self, release }
+      @releases ||= ReleaseSet.new self, *api.get_releases(name).body.map { |release| Release.new self, release }
     end
 
     # Public: Get available stacks for current app.
     def stacks
-      StackSet.new self, *api.get_stack(name).body.map { |stack| Stack.new self, stack }
+      @stacks ||= StackSet.new self, *api.get_stack(name).body.map { |stack| Stack.new self, stack }
     end
 
     # Public: Turn the maintenance mode on.

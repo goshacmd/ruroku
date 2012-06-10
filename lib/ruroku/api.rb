@@ -10,7 +10,7 @@ module Ruroku
     #
     # Returns the Array[App].
     def apps
-      heroku_api.get_apps.body.map { |app| App.new heroku_api, app }
+      @apps ||= heroku_api.get_apps.body.map { |app| App.new heroku_api, app }
     end
 
     # Public: Get specific app.
@@ -20,12 +20,12 @@ module Ruroku
 
     # Public: Get keys associated with current heroku account.
     def keys
-      heroku_api.get_keys.body.map { |key| Key.new heroku_api, key }
+      @keys ||= heroku_api.get_keys.body.map { |key| Key.new heroku_api, key }
     end
 
     # Public: Get User object associated with current heroku account.
     def user
-      User.new heroku_api, heroku_api.get_user.body
+      @user ||= User.new heroku_api, heroku_api.get_user.body
     end
 
     def inspect
