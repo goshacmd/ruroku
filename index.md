@@ -4,8 +4,8 @@ layout: default
 
 # Ruroku
 
-The Ruby client for Heroku API, built on top of official `heroku.rb`
-gem.
+The better Ruby client for Heroku API, built on top of official
+`heroku.rb` gem.
 
 ## Installation
 
