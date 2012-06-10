@@ -1,5 +1,8 @@
 module Ruroku
   class StackSet < NestedResourceSet
+    resource_class Stack
+    collection_api_selector :get_stack
+
     # Map API methods to collection methods.
     #
     # Examples

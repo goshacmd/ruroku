@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Ruroku::KeySet do
   before do
-    @set = Ruroku::KeySet.new stubbed_app
+    @set = Ruroku::KeySet.new stubbed_api
     @set_api = @set.api
   end
 

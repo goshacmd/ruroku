@@ -1,5 +1,8 @@
 module Ruroku
-  class DomainSet < ResourceSet
+  class DomainSet < NestedResourceSet
+    resource_class Domain
+    collection_api_selector :get_domains
+
     # Map API methods to collection methods.
     #
     # Examples

@@ -1,5 +1,8 @@
 module Ruroku
   class AddonSet < NestedResourceSet
+    resource_class Addon
+    collection_api_selector :get_addons
+
     # Map API methods to collection methods.
     #
     # Examples

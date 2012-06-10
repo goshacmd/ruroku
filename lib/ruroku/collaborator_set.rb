@@ -1,5 +1,8 @@
 module Ruroku
   class CollaboratorSet < NestedResourceSet
+    resource_class Collaborator
+    collection_api_selector :get_collaborators
+
     # Map API methods to collection methods.
     #
     # Examples

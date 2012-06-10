@@ -20,7 +20,7 @@ module Ruroku
 
     # Public: Get keys associated with current heroku account.
     def keys
-      @keys ||= heroku_api.get_keys.body.map { |key| Key.new heroku_api, key }
+      @keys ||= KeySet.new heroku_api
     end
 
     # Public: Get User object associated with current heroku account.

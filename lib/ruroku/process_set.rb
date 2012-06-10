@@ -1,5 +1,8 @@
 module Ruroku
   class ProcessSet < NestedResourceSet
+    resource_class Process
+    collection_api_selector :get_ps
+
     # Map API methods to collection methods.
     #
     # Examples

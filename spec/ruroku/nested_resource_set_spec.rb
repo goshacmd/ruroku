@@ -3,7 +3,11 @@ require 'spec_helper'
 describe Ruroku::NestedResourceSet do
   describe '.map_api' do
     before do
+      class MyResource < Ruroku::Base; end
       class MyNestedResourceSet < Ruroku::NestedResourceSet
+        resource_class MyResource
+        collection_api_selector :query_collection
+
         map_api my_method: :api_mapping
       end
     end

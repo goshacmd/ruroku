@@ -1,5 +1,8 @@
 module Ruroku
   class KeySet < ResourceSet
+    resource_class Key
+    collection_api_selector :get_keys
+
     # Map API methods to collection methods.
     #
     # Examples
