@@ -68,6 +68,15 @@ app.maintenance!
 app.no_maintenance!
 ```
 
+Also, imagine you've created another app after you you queried
+`heroku.app`. To refresh collection of apps (or other collections:
+addons, config vars, collaborators, and so on), just call `#reload` on
+collection:
+
+```ruby
+apps.reload
+```
+
 ### Addons
 
 To get a list of addons used by a particular app:

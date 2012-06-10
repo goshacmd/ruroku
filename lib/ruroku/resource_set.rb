@@ -10,6 +10,17 @@ module Ruroku
       query_collection_objects
     end
 
+    # Public: Reload collection.
+    #
+    # Examples
+    #
+    #   collection.reload
+    def reload
+      clear
+      query_collection_objects
+    end
+
+    # Public: Query collection objects from API.
     def query_collection_objects
       collection_objects = api.send(self.class.collection_api_selector, *collection_query_params).body
 
@@ -24,15 +35,18 @@ module Ruroku
       end
     end
 
+    # Public: Build a resource from response.
     def build_resource(response)
       resource_class = self.class.resource_class
       resource_class.new response
     end
 
+    # Public: Get params for querying collection.
     def collection_query_params
       []
     end
 
+    # Public: Set or get a collection API selector.
     def self.collection_api_selector(meth = nil)
       if meth
         @_collection_api_selector = meth
@@ -41,6 +55,7 @@ module Ruroku
       end
     end
 
+    # Public: Set or get a collection resource class.
     def self.resource_class(klass = nil)
       if klass
         @_resource_class = klass
