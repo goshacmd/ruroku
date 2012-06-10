@@ -1,4 +1,4 @@
-## Ruruku 0.0.2  (unreleased)
+## Ruruku 0.0.2  (Jun 10, 2012)
 
 * Added collection reloading
 * Added collection caching
