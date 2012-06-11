@@ -3,7 +3,7 @@
 [![Dependency Status](https://gemnasium.com/goshakkk/ruroku.png?travis)](https://gemnasium.com/goshakkk/ruroku)
 
 The better Ruby client for Heroku API, built on top of official
-`heroku.rb` gem.
+[`heroku.rb`](https://github.com/heroku/heroku.rb) gem.
 
 ## Installation
 
