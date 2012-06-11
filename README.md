@@ -246,6 +246,7 @@ And rollback to any release:
 
 ```ruby
 releases.rollback 'v1'
+release.rollback
 ```
 
 ### Stacks
