@@ -52,6 +52,10 @@ app = heroku.app 'app-name'
 # or:
 
 app = heroku.apps['app-name']
+
+# or even:
+
+app = heroku['app-name']
 ```
 
 And access its properties such as:

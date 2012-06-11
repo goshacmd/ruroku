@@ -28,6 +28,18 @@ describe Ruroku::API do
     end
   end
 
+  describe '#[]' do
+    it 'gets app from api' do
+      heroku.should_receive(:get_app)
+      api['test-app']
+    end
+
+    it 'returns app' do
+      app = api['test-app']
+      app.instance_of?(Ruroku::App).should be_true
+    end
+  end
+
   describe '#keys' do
     it 'gets keys from api' do
       heroku.should_receive(:get_keys)

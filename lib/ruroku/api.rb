@@ -15,6 +15,7 @@ module Ruroku
     def app(app_name)
       App.new heroku_api, heroku_api.get_app(app_name).body
     end
+    alias :[] :app
 
     # Public: Get keys associated with current heroku account.
     def keys
