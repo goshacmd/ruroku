@@ -2,17 +2,17 @@
 require File.expand_path('../lib/ruroku/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Gosha Arinich"]
-  gem.email         = ["me@goshakkk.name"]
+  gem.authors       = ['Gosha Arinich']
+  gem.email         = ['me@goshakkk.name']
   gem.description   = %q{The better Ruby client for the Heroku API}
   gem.summary       = %q{The better Ruby client for the Heroku API}
-  gem.homepage      = ""
+  gem.homepage      = ''
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.name          = "ruroku"
-  gem.require_paths = ["lib"]
+  gem.name          = 'ruroku'
+  gem.require_paths = ['lib']
   gem.version       = Ruroku::VERSION
 
   gem.add_runtime_dependency 'heroku-api', '~> 0.2'
