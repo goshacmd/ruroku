@@ -1,0 +1,12 @@
+require 'ruroku/resource_sets/resource_set'
+require 'ruroku/resource_sets/nested_resource_set'
+
+require 'ruroku/resource_sets/app_set'
+require 'ruroku/resource_sets/addon_set'
+require 'ruroku/resource_sets/collaborator_set'
+require 'ruroku/resource_sets/config_var_set'
+require 'ruroku/resource_sets/domain_set'
+require 'ruroku/resource_sets/key_set'
+require 'ruroku/resource_sets/process_set'
+require 'ruroku/resource_sets/release_set'
+require 'ruroku/resource_sets/stack_set'
