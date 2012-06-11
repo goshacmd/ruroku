@@ -15,6 +15,8 @@ module Ruroku
     # Examples
     #
     #   apps['test-app']
+    #
+    # Returns the App object.
     def [](app_name)
       select { |app| app.name == app_name }.first
     end

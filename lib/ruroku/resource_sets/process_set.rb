@@ -24,6 +24,9 @@ module Ruroku
     #
     #   processes['web.1']
     #   processes['web']
+    #
+    # Returns the ProcessSet object if process type was passed, the
+    # Process object otherwise.
     def [](process_name)
       if process_name.include? '.'
         select { |process| process.type == process_name }

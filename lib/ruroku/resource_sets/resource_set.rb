@@ -20,7 +20,7 @@ module Ruroku
       query_collection_objects
     end
 
-    # Public: Query collection objects from API.
+    # Internal: Query collection objects from API.
     def query_collection_objects
       collection_objects = api.send(self.class.collection_api_selector, *collection_query_params).body
 
@@ -35,27 +35,47 @@ module Ruroku
       end
     end
 
-    # Public: Build a resource from response.
+    # Internal: Build a resource from response.
     def build_resource(response)
       resource_class = self.class.resource_class
       resource_class.new api, response
     end
 
-    # Public: Get params for querying collection.
+    # Internal: Get params for querying collection.
     def collection_query_params
       []
     end
 
     # Public: Set or get a collection API selector.
-    def self.collection_api_selector(meth = nil)
-      if meth
-        @_collection_api_selector = meth
+    # This selector method is then applied on the API object in order to
+    # get collection objects.
+    #
+    # selector - The Symbol api selector.
+    #
+    # Examples
+    #
+    #   class KeySet < ResourceSet
+    #     resource_class Key
+    #     collection_api_selector :get_keys
+    #   end
+    def self.collection_api_selector(selector = nil)
+      if selector
+        @_collection_api_selector = selector
       else
         @_collection_api_selector
       end
     end
 
     # Public: Set or get a collection resource class.
+    # Once collection was queried, the response is processed and
+    # resources are created with resource class.
+    #
+    # Examples
+    #
+    #   class KeySet < ResourceSet
+    #     resource_class Key
+    #     collection_api_selector :get_keys
+    #   end
     def self.resource_class(klass = nil)
       if klass
         @_resource_class = klass
@@ -64,6 +84,17 @@ module Ruroku
       end
     end
 
+    # Public: Create mappings "set method -> api method".
+    #
+    # methods - The Hash of set method -> api method mappings.
+    #
+    # Examples
+    #
+    #   class KeySet < ResourceSet
+    #     map_api add: :post_key
+    #   end
+    #
+    #   So now, when we call #add on KeySet, api#post_key is executed.
     def self.map_api(methods)
       methods.each do |method_name, api_mapping|
         define_method method_name do |*args|

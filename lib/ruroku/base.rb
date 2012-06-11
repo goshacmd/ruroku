@@ -11,6 +11,17 @@ module Ruroku
     end
 
     # Public: Define resource id key.
+    # It's used to represent the resource when talking to API. (It might be
+    # the name of the app for App object, the email for Collaborator object,
+    # and so on.)
+    #
+    # Examples
+    #
+    #   class App < Base
+    #     attr_accessor :name
+    #
+    #     resource_id :name
+    #   end
     def self.resource_id(id_key = nil)
       if id_key
         @_resource_id = id_key
@@ -19,9 +30,13 @@ module Ruroku
       end
     end
 
+    # Public: Get the value of resource id.
+    def resource_id
+      send self.class.resource_id
+    end
+
     def inspect
-      if self.class.resource_id
-        resource_id = send self.class.resource_id
+      if resource_id
         "<#{self.class} #{resource_id}>"
       else
         "<#{self.class}>"

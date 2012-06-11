@@ -17,6 +17,8 @@ module Ruroku
     # Examples
     #
     #   collaborators['guy@me.com']
+    #
+    # Returns the Collaborator object.
     def [](collaborator_email)
       select { |collaborator| collaborator.email == collaborator_email }.first
     end

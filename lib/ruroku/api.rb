@@ -12,6 +12,11 @@ module Ruroku
     end
 
     # Public: Get specific app.
+    #
+    # Examples
+    #
+    #   heroku.app 'app-name'
+    #   heroku['app-name']
     def app(app_name)
       App.new heroku_api, heroku_api.get_app(app_name).body
     end

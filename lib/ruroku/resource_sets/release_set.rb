@@ -16,6 +16,10 @@ module Ruroku
     #
     #   releases[2]
     #   releases['v2']
+    #   releases[1..10]
+    #
+    # Returns the ReleaseSet object if range of release numbers is passed,
+    # the Release object otherwise.
     def [](release_name)
       if release_name.instance_of? Range
         select { |release| release_name.include? release.to_i }

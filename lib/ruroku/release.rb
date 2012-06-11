@@ -20,6 +20,8 @@ module Ruroku
       api.post_release app.name, name
     end
 
+    # Public: Convert the release to Integer.
+    # Returns the release version number.
     def to_i
       name[1..-1]
     end
