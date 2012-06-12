@@ -1,4 +1,4 @@
-## Ruroku 0.0.3 (unreleased)
+## Ruroku 0.0.3 (Jun 12, 2012)
 
 * Added alternative app finder: `heroku['app-name']`
 * Added release range finder: `releases[1..10]`
