@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the User resource.
   class User < Base
     attribute :id, Integer
     attribute :name, String

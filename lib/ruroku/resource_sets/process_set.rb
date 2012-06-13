@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Processes.
   class ProcessSet < NestedResourceSet
     resource_class Process
     collection_api_selector :get_ps

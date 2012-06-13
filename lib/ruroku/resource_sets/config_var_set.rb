@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of ConfigVars.
   class ConfigVarSet < NestedResourceSet
     resource_class ConfigVar
     collection_api_selector :get_config_vars

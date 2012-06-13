@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Stacks.
   class StackSet < NestedResourceSet
     resource_class Stack
     collection_api_selector :get_stack

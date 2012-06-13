@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Releases.
   class ReleaseSet < NestedResourceSet
     resource_class Release
     collection_api_selector :get_releases

@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Apps.
   class AppSet < ResourceSet
     resource_class App
     collection_api_selector :get_apps

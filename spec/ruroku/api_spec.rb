@@ -8,7 +8,7 @@ describe Ruroku::API do
       heroku.should_receive(:get_apps)
       api.apps
     end
-    
+
     it 'returns array of apps' do
       apps = api.apps
       apps.instance_of?(Ruroku::AppSet).should be_true

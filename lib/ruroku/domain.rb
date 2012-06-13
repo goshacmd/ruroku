@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Domain resource.
   class Domain < NestedBase
     attribute :id, Integer
     attribute :domain, String

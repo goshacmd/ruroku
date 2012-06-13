@@ -1,4 +1,5 @@
 module Ruroku
+  # Represents the Collaborator resource.
   class Collaborator < NestedBase
     attribute :email, String
     attribute :access, String

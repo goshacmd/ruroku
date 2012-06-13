@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the nested set of Resources.
   class NestedResourceSet < ResourceSet
     attr_accessor :app
 

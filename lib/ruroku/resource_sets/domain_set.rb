@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Domains.
   class DomainSet < NestedResourceSet
     resource_class Domain
     collection_api_selector :get_domains

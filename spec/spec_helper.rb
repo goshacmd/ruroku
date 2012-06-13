@@ -53,7 +53,7 @@ module Helpers
   def stubbed_api
     api = stub_api double('api')
     api.stub(:query_collection).and_return stubbed_response([])
-    
+
     api
   end
 

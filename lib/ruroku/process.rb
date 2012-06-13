@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Process resource.
   class Process < NestedBase
     attribute :process, String
     attribute :type, String

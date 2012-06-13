@@ -1,4 +1,6 @@
 module Ruroku
+  # Public: API object, holding a connection with Heroku API, and prociding
+  # access to top-level resources (apps, keys, user).
   class API
     attr_accessor :heroku_api
 

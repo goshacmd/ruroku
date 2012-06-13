@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Base class for nested resources.
   class NestedBase < Base
     attr_accessor :app, :api
 

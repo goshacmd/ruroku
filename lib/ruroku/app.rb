@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the App resource and nested resources.
   class App < Base
     attribute :id, Integer
     attribute :name, String

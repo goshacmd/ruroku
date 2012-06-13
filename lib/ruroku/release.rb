@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Release resource.
   class Release < NestedBase
     attribute :name, String
     attribute :descr, String

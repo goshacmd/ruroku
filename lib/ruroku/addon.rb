@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Addon resource.
   class Addon < NestedBase
     attribute :name, String
     attribute :description, String

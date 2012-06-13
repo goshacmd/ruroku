@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the set of Resources.
   class ResourceSet < Array
     attr_accessor :api
 
@@ -7,7 +8,7 @@ module Ruroku
 
       super args
 
-      query_collection_objects
+      refresh_collection
     end
 
     # Public: Reload collection.
@@ -22,7 +23,13 @@ module Ruroku
 
     # Internal: Query collection objects from API.
     def query_collection_objects
-      collection_objects = api.send(self.class.collection_api_selector, *collection_query_params).body
+      collection_objects = api.send(self.class.collection_api_selector,
+                                    *collection_query_params).body
+    end
+
+    # Internal: Refresh collection by querying new objects from API.
+    def refresh_collection
+      collection_objects = query_collection_objects
 
       if collection_objects.instance_of? Array
         collection_objects.each do |response|

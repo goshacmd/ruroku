@@ -13,7 +13,8 @@ describe Ruroku::NestedResourceSet do
     end
 
     it 'defines the method' do
-      MyNestedResourceSet.new(stubbed_app).respond_to?(:my_method).should be_true
+      my_nested_resource_set = MyNestedResourceSet.new(stubbed_app)
+      my_nested_resource_set.respond_to?(:my_method).should be_true
     end
 
     it 'calls api mapping' do

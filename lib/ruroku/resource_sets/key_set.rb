@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Keys.
   class KeySet < ResourceSet
     resource_class Key
     collection_api_selector :get_keys

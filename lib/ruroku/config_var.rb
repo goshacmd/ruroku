@@ -1,4 +1,5 @@
 module Ruroku
+  # Represents the ConfigVar resource.
   class ConfigVar < NestedBase
     attribute :key, String
     attribute :value, String

@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Collaborators.
   class CollaboratorSet < NestedResourceSet
     resource_class Collaborator
     collection_api_selector :get_collaborators

@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Base class for top-level resources.
   class Base
     include Virtus
 

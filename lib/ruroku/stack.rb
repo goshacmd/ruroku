@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Stack resource.
   class Stack < NestedBase
     attribute :name, String
     attribute :current, Boolean, default: false

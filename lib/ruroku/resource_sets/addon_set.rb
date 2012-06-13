@@ -1,4 +1,5 @@
 module Ruroku
+  # Public: Represents the Set of Addons.
   class AddonSet < NestedResourceSet
     resource_class Addon
     collection_api_selector :get_addons
