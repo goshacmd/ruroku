@@ -22,7 +22,7 @@ module Ruroku
     # the Release object otherwise.
     def [](release_name)
       if release_name.instance_of? Range
-        select { |release| release_name.include? release.to_i }
+        select { |release| release_name.include? release.number }
       else
         release_name = "v#{release_name}" if release.instance_of? Fixnum
 
